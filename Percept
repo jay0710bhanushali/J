@@ -1,0 +1,57 @@
+$ cd ..
+$ cd ..
+$ cd ..
+$ cd ..
+$ cd D:
+$ cd "D:\sem2\command"
+$ git init
+- Initialized empty Git repository in D:/sem2/command/.git/
+$ git remote add origin https://github.com/jay0710bhanushali/naamdiya.git
+$ git add .
+$ git commit -m "starts"
+- [master (root-commit) 8331700] starts
+  1 file changed, 29 insertions(+)
+  create mode 100644 code.html
+$ git push origin master
+- Enumerating objects: 3, done.
+  Counting objects: 100% (3/3), done.
+  Delta compression using up to 8 threads
+  Compressing objects: 100% (2/2), done.
+  Writing objects: 100% (3/3), 524 bytes | 524.00 KiB/s, done.
+  Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+  To https://github.com/jay0710bhanushali/naamdiya.git
+   * [new branch]      master -> master
+$ git checkout -b lucky
+- Switched to a new branch 'lucky'
+$ sed -i "s/Name/Your Name/" code.html
+$ sed -i "s/Email/Your Email/" code.html
+$ git commit -am lucky
+ - warning: in the working copy of 'code.html', LF will be replaced by CRLF 	the next time Git touches it
+   [lucky 94b3b37] lucky
+   1 file changed, 2 insertions(+), 2 deletions(-)
+$ git push origin lucky
+- Enumerating objects: 5, done.
+  Counting objects: 100% (5/5), done.
+  Delta compression using up to 8 threads
+  Compressing objects: 100% (2/2), done.
+   * [new branch]      lucky -> lucky
+$ git checkout master
+- Switched to branch 'master'
+$ sed -i "s/Name/Your Full Name/" code.html
+$ sed -i "s/Email/Your Email address/" code.html
+$ git commit -am changed
+- warning: in the working copy of 'code.html', LF will be replaced by CRLF   	the next time Git touches it
+  [master 322f95e] changed
+   1 file changed, 2 insertions(+), 2 deletions(-)
+$ git merge lucky
+- Auto-merging code.html
+  CONFLICT (content): Merge conflict in code.html
+  Automatic merge failed; fix conflicts and then commit the result.
+$ git add .
+$ git commit -m "conflict resolved"
+- [master 001e544] conflict resolved
+$ git push origin master
+- Enumerating objects: 10, done.
+  remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+  To https://github.com/jay0710bhanushali/naamdiya.git
+     8331700..001e544  master -> master
